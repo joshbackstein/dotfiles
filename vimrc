@@ -46,6 +46,12 @@ set autoindent
 " display file name in vim title
 set title
 
+" always show status line
+set laststatus=2
+
+" display full file path in the status line
+set statusline="%F%l,%c"
+
 " show line numbers
 set number
 
