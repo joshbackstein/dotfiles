@@ -22,3 +22,11 @@ grepHistory() {
   history | grep "$1"
 }
 alias gh=grepHistory
+
+# git line count by author.
+# Taken from:
+# http://stackoverflow.com/questions/1265040/how-to-count-total-lines-changed-by-a-specific-author-in-a-git-repository
+gitLineCountByAuthor() {
+  git log --author="$1" --pretty=tformat: --numstat | gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
+}
+alias gitlc=gitLineCountByAuthor
