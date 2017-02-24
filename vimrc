@@ -255,3 +255,11 @@ let g:go_highlight_structs = 1
 let g:go_highligh_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+
+"""
+""" STUFF FOR ARM ASSEMBLY
+"""
+
+" ARMv6 and ARMv7 assembly syntax highlighting.
+au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
