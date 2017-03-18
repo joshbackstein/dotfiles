@@ -1,0 +1,849 @@
+###
+### Analysis
+###
+# Continue analysis after jmp.
+#e anal.afterjmp = true
+
+# Automatically set a name for the functions. May result in some false
+# positives.
+#e anal.autoname = true
+
+# Make basic af analysis walk into calls.
+#e anal.calls = true
+
+# Create references for conditional jumps.
+#e anal.cjmpref = true
+
+# Follow data references for code coverage.
+#e anal.datarefs = true
+
+# Continue analysis after each function.
+#e anal.hasnext = true
+
+# Skip "mov reg, reg" and "lea reg, [reg]" at the beginning of functions.
+#e anal.hpskip = false
+
+# Jump above function pointer.
+#e anal.jmpabove = true
+
+# Create references for unconditional jumps.
+#e anal.jmpref = true
+
+# Analyze jump tables in switch statements.
+#e anal.jmptbl = true
+
+# Restrict analysis to address range [anal.from:anal.to].
+#e anal.limits = false
+
+# Maximum number of reflines to be analyzed and displayed in asm.lines
+# with pd.
+#e anal.maxreflines = 0
+
+# Analyze data as code.
+#e anal.noncode = false
+
+# Skip nops at the beginning of functions.
+#e anal.nopskip = true
+
+# Analyze push+ret as jmp.
+#e anal.pushret = false
+
+# Sleep N usecs every so often during analysis to avoid 100% CPU usage.
+#e anal.sleep = 0
+
+# Split functions into basic blocks in analysis.
+#e anal.split = true
+
+# Analyze local variables and arguments.
+#e anal.vars = true
+
+# Search values in functions (aav). False by default to only find in
+# non-code.
+#e anal.vinfun = false
+
+# Search values outside function ranges (requires anal.vinfun=false).
+#e anal.vinfunrange = false
+
+
+###
+### Disassembly
+###
+# Word size in bits at assembler.
+#e asm.bits = 32
+
+# Display the bytes of each instruction.
+#e asm.bytes = true
+
+# Show callee function related info as comments in disasm.
+#e asm.calls = true
+
+# Align comments at column N.
+#e asm.cmtcol = 70
+
+# Show comment flags associated to branch reference.
+#e asm.cmtflgrefs = true
+
+# Show comments at right of disassembly if they fit in screen.
+#e asm.cmtright = true
+
+# Show comments in disassembly view.
+#e asm.comments = true
+
+# Show functions' calls.
+#e asm.fcncalls = true
+
+# Show function boundary lines.
+#e asm.fcnlines = true
+
+# Show flags.
+#e asm.flags = true
+
+# Show functions in disassembly.
+#e asm.functions = true
+
+# Show hints for magic numbers in disasm.
+#e asm.hints = false
+
+# Show invalid instructions as hexadecimal numbers.
+#e asm.invhex = true
+
+# Show jump hints [numbers] in disasm.
+#e asm.jmphints = true
+
+# Align disasm bytes to the left.
+#e asm.lbytes = true
+
+# Show ASCII-art lines at disassembly.
+#e asm.lines = true
+
+# Show call lines.
+#e asm.lines.call = false
+
+# Show separator lines after ret.
+#e asm.lines.ret = false
+
+# Show out-of-block lines.
+#e asm.linesout = true
+
+# Show lines before opcode instead of offset.
+#e asm.linesright = false
+
+# Put a space between lines.
+#e asm.lineswide = false
+
+# Number of columns for program flow arros.
+#e asm.lineswidth = 7
+
+# Show marks before the disassembly.
+#e asm.marks = true
+
+# Maximum number of xrefs to be displayed as list (use columns above).
+#e asm.maxrefs = 5
+
+# Realign disassembly if there is a flag in the middle of an instruction.
+#e asm.midflags = 1
+
+# Show offsets at disassembly.
+#e asm.offset = true
+
+# Show relative offsets instead of absolute address in disasm.
+#e asm.reloff = false
+
+# Show relative offsets to flags (not only functions).
+#e asm.reloff.flags = false
+
+# Substitute program-counter-relative (PC-relative) expressions in disasm.
+#e asm.relsub = true
+
+# Show exectution traces for each opcode.
+#e asm.trace = false
+
+# Indent disassembly with trace.count information.
+#e asm.tracespace = false
+
+# Use uppercase syntax at disassembly.
+#e asm.ucase = false
+
+# Show local variables in disassembly.
+#e asm.vars = true
+
+# Substitute variables in disassembly.
+#e asm.varsub = true
+
+# Show accesses of local variables.
+#e asm.varxs = false
+
+# Show xrefs in disassembly.
+#e asm.xrefs = true
+
+
+###
+### Binary files
+###
+# Base address of the binary.
+#e bin.baddr = 134512640
+
+# Load classes from rbin on startup.
+#e bin.classes = true
+
+# Load debug information on startup if available.
+#e bin.dbginfo = true
+
+# Try to debase64 all strings.
+#e bin.debase64 = false
+
+# Import demangled symbols form RBin.
+#e bin.demangle = true
+
+# Filter symbol names to fix duped names.
+#e bin.filter = true
+
+# Base address for loading library ("*.so").
+#e bin.laddr = 0
+
+# Language for bin.demangle.
+#e bin.lang = c
+
+# Maximum string length for r_bin.
+#e bin.maxstr = 0
+
+# Maximum size of range to load strings from.
+#e bin.maxstrbuf = 0x00a00000
+
+# Merge symbols with the same name into the same flag.
+#e bin.mergeflags = true
+
+# Minimum string length for r_bin.
+#e bin.minstr = 0
+
+# Load strings from raw binaries.
+#e bin.rawstr = false
+
+# Load strings form rbin on startup.
+#e bin.strings = true
+
+# Try to purge false positive strings.
+#e bin.strpurge = false
+
+# Show RBin warnings when loading binaries.
+#e bin.verbose = true
+
+
+###
+### Configuration
+###
+# Debugger mode.
+#e cfg.debug = false
+
+# Select defualt editor program.
+#e cfg.editor = vim
+
+# Show tips at startup.
+#e cfg.fortunes = true
+
+# Type of fortunes to show (tips, fun, nsfw, creepy).
+#e cfg.fortunes.type = tips,fun
+
+# If the file is bigger than hashlimit, do not compute hashes.
+#e cfg.hashlimit = 0x00a00000
+
+# Load plugins at startup.
+#e cfg.plugins = true
+
+# Filename prefix for automated dumps.
+#e cfg.prefixdump = dump
+
+# Sandbox mode disables systems and open on upper directories.
+#e cfg.sandbox = false
+
+# Seek after write.
+#e cfg.wseek = false
+
+
+###
+### Commands
+###
+# Command to run when a breakpoint is hit.
+#e cmd.bp = 
+
+# Command to run when an esil interrupt happens.
+#e cmd.esil.intr = 
+
+# Command to run when an esil trap happens.
+#e cmd.esil.trap = 
+
+# Command to run when a function is deleted.
+#e cmd.fcn.delete = 
+
+# Command to run when a new function is analyzed.
+#e cmd.fcn.new = 
+
+# Command to run when a function is renamed.
+#e cmd.fcn.rename = 
+
+# Graph visual prompt commands.
+#e cmd.gprompt = 
+
+# Command executed by "agv" command to view graphs.
+#e cmd.graph = agf
+
+# Command to run when a search hit is found.
+#e cmd.hit = 
+
+# Show info when a tracepoint/breakpoint is hit.
+#e cmd.hitinfo = 1
+
+# Command to run when file is opened.
+#e cmd.open = 
+
+# Prompt commands.
+#e cmd.prompt = 
+
+# Empty command an alias for ".." (repeat last command).
+#e cmd.repeat = false
+
+# Command to display stack in visual debug mode.
+#e cmd.stack = 
+
+# Command to run when a command is repeated (number prefix).
+#e cmd.times = 
+
+# Replace current print mode.
+#e cmd.visual = 
+
+# Visual prompt commands.
+#e cmd.vprompt = 
+
+
+###
+### Debugging
+###
+# Stop execution before the syscall is executed (see dcs).
+#e dbg.aftersyscall = true
+
+# Set the args of the program to debug.
+#e dbg.args = 
+
+# Select the debugger backend.
+#e dbg.backend = native
+
+# Break on entrypoint (loader, entry, constructor, main).
+#e dbg.bep = loader
+
+# Force breakpoints to be inside a valid map.
+#e dbg.bpinmaps = true
+
+# Size of software breakpoints.
+#e dbg.bpsize = 1
+
+# Select backtrace algorithm.
+#e dbg.btalgo = fuzzy
+
+# Depth of backtrace.
+#e dbg.btdepth = 128
+
+# Stop execution if new thread is created.
+#e dbg.clone = false
+
+# SIGINT handle for attached processes.
+#e dbg.consbreak = false
+
+# Stop execution if new thread is created.
+#e dbg.execs = false
+
+# Kill process on exit.
+#e dbg.exitkills = true
+
+# Follow program counter when PC > core-offset + dbg.follow
+#e dbg.follow = 64
+
+# Continue tracing child process on fork. By default, the
+# parent process is traced.
+#e dbg.follow.child = false
+
+# Stop execution if fork() is done (see dbg.threads).
+#e dbg.forks = false
+
+# Set hardware or software breakpoints.
+#e dbg.hwbp = 0
+
+# If set, stop when loading matching libname.
+#e dbg.libs = 
+
+# Path to RRunProfile.
+#e dbg.profile = 
+
+# Show stack and regs in visual mode in a slow but verbose mode.
+#e dbg.slow = false
+
+# Set cmd.prompt to ".dr*" or ".dr*;drd;sr PC;pi 1;s-"
+#e dbg.status = false
+
+# Force use of software steps (code analysis + breakpoint).
+#e dbg.swstep = false
+
+# Stop all threads when debugger breaks (see dbg.forks).
+#e dbg.threads = false
+
+# Trace program execution (see asm.trace).
+#e dbg.trace = false
+
+# While tracing, avoid following calls outside specified range.
+#e dbg.trace.inrange = false
+
+# Trace tag.
+#e dbg.trace.tag = 0
+
+# If set, stop when unloading libs matching libname.
+#e dbg.unlibs = 
+
+
+###
+### ESIL
+###
+# Trap when executing code in non-executable memory.
+#e esil.exectrap = false
+
+# Invalid read or write produces trap exception.
+#e esil.iotrap = true
+
+# Prevent memory read/write at null pointer.
+#e esil.nonull = false
+
+# Set memory as read-only for ESIL.
+#e esil.romem = false
+
+# Number of elements that can be pushed on the esilstack.
+#e esil.stacksize = 32
+
+
+###
+### Graph
+###
+# Show comments at right.
+#e graph.cmtright = false
+
+# Show disasm comments in graph.
+#e graph.comments = true
+
+# Font for dot graphs.
+#e graph.font = Courier
+
+# Specify output format for graphs (dot, gml, gmlfcn).
+#e graph.format = dot
+
+# Highlights the current node in graphviz graph.
+#e graph.gv.current = false
+
+# Invert scroll direction in ASCII-art graph.
+#e graph.invscroll = false
+
+# Graph layout (0=vertical, 1=horizontal).
+#e graph.layout = 0
+
+# Graph edges (0=diagonal, 1=square).
+#e graph.linemode = 1
+
+# Enables shortcuts for every node.
+#e graph.nodejmps = true
+
+# Show offsets in graph.
+#e graph.offset = true
+
+# TODO
+# Graph references in callgraphs (.agc*;aggi).
+#e graph.refs = true
+
+# Scroll speed in ASCII-art graph.
+#e graph.scroll = 5
+
+# Display graph in web browser.
+#e graph.web = false
+
+
+###
+### Hex
+###
+# Number of columns in hexdump.
+#e hex.cols = 16
+
+# Show comments in "px" hexdump.
+#e hex.comments = true
+
+# Maximum level of recurrence while telescoping memory.
+#e hex.depth = 5
+
+# If non-zero, overrides the flag size in pxa.
+#e hex.flagsz = 0
+
+# Show bytes paired in "px" hexdump.
+#e hex.pairs = true
+
+# Line stride in hexdump (default is 0).
+#e hex.stride = 0
+
+
+###
+### HTTP
+###
+# Only accept clients from the comma-separated IP list.
+#e http.allow = 
+
+# Server address.
+#e http.bind = localhost
+
+# Command to open HTTP URLs.
+#e http.browser = xdg-open
+
+# Enable CORS.
+#e http.cors = false
+
+# Kill server after N seconds with no client.
+#e http.dietime = 0
+
+# Enable directory listing.
+#e http.dirlist = false
+
+# HTTP home root directory.
+#e http.homeroot = ~/.config/radare2/www
+
+# Show HTTP requests processed.
+#e http.log = true
+
+# Specify a log file instead of stderr for HTTP requests.
+#e http.logfile = 
+
+# Maximum file size for upload.
+#e http.maxsize = 0
+
+# Server port.
+#e http.port = 4000
+
+# CSFR protection if set.
+#e http.referer = 
+
+# HTTP root directory.
+#e http.root = /usr/share/radare2/1.2.1/www
+
+# Sandbox the HTTP server.
+#e http.sandbox = true
+
+# Disconnect clients after N seconds of inactivity.
+#e http.timeout = 3
+
+# Default web UI (enyo, m, p, t).
+#e http.ui = m
+
+# /up/ answers GET requests in addition to POST.
+#e http.upget = false
+
+# Enable file uploads to /up/<filename>
+#e http.upload = false
+
+# Path where files are uploaded.
+#e http.uproot = /tmp
+
+# Address of HTTP proxy.
+#e http.uri = 
+
+# Output server logs to stdout.
+#e http.verbose = true
+
+
+###
+### I/O
+###
+# Use this value instead of oxff to fill unallocated areas.
+#e io.0xff = 255
+
+# Disable ASLR for spawn and such.
+#e io.aslr = false
+
+# Change fd when opening a new file.
+#e io.autofd = true
+
+# Honor IO section permissions for 1=read, 2=write, 0=none.
+#e io.enforce = 0
+
+# Fill invalid buffers with 0xff instead of returning error.
+#e io.ff = true
+
+# Ignore maps/sections and use raw IO.
+#e io.raw = false
+
+# Only read from sections (if any).
+#e io.sectonly = false
+
+# Use virtual address layout.
+#e io.va = true
+
+
+###
+### Keys
+###
+# Override "step over" action.
+#e key.S = 
+
+# Run this when F1 key is pressed in visual mode.
+#e key.f1 = 
+
+# Run this when F10 key is pressed in visual mode.
+#e key.f10 = 
+
+# Run this when F11 key is pressed in visual mode.
+#e key.f11 = 
+
+# Run this when F12 key is pressed in visual mode.
+#e key.f12 = 
+
+# Run this when F2 key is pressed in visual mode.
+#e key.f2 = dbs $$
+
+# Run this when F3 key is pressed in visual mode.
+#e key.f3 = 
+
+# Run this when F4 key is pressed in visual mode.
+#e key.f4 = 
+
+# Run this when F5 key is pressed in visual mode.
+#e key.f5 = 
+
+# Run this when F6 key is pressed in visual mode.
+#e key.f6 = 
+
+# Run this when F7 key is pressed in visual mode.
+#e key.f7 = ds
+
+# Run this when F8 key is pressed in visual mode.
+#e key.f8 = dso
+
+# Run this when F9 key is pressed in visual mode.
+#e key.f9 = dc
+
+# Override "step into" action.
+#e key.s = 
+
+
+###
+### Lines
+###
+# Enable absolute line numbers.
+#e lines.abs = false
+
+# Start address for line seek.
+#e lines.from = 0
+
+
+###
+### Projects
+###
+# Save the target binary inside the project directory.
+#e prj.files = false
+
+# Every project is a git reop and saving is committing.
+#e prj.git = false
+
+# Name of current project.
+#e prj.name = 
+
+# Use ZIP format for project files.
+#e prj.zip = false
+
+
+###
+### ROP
+###
+# Display comments in rop search output.
+#e rop.comments = false
+
+# Include conditional jump, calls, and returns in ropsearch.
+#e rop.conditional = false
+
+# Store rop search results in sdb.
+#e rop.db = true
+
+# Maximum ROP gadget length.
+#e rop.len = 5
+
+# Include NX/XN/XD sections in ropsearch.
+#e rop.nx = false
+
+# Display every length gadget from rop.len=X to 2 in /Rl
+#e rop.subchains = false
+
+
+###
+### Screen
+###
+# V@ starts a background HTTP server and spawns an r2 -C
+#e scr.atport = false
+
+# Enable colors.
+e scr.color = true
+
+# Colorize bytes that represent the opcodes of the instruction.
+e scr.color.bytes = true
+
+# Colorize numbers and registers in opcodes.
+e scr.color.ops = true
+
+# Workaround for Prompt iOS SSH client.
+#e scr.fix.columns = 0
+
+# Workaround for Linux TTY.
+#e scr.fix.rows = 0
+
+# Disassembly uses HTML syntax.
+#e scr.html = false
+
+# Start in interactive mode.
+#e scr.interactive = true
+
+# Select the seek mode in visual.
+#e scr.nkey = flag
+
+# Show now output.
+#e scr.null = false
+
+# Show user prompt (used by r2 -q).
+#e scr.prompt = true
+
+# Show user prompt file (used by r2 -q).
+#e scr.promptfile = false
+
+# Show flag name in the prompt.
+#e scr.promptflag = false
+
+# Show section name in the prompt.
+#e scr.promptsect = false
+
+# Auto-adjust Visual depending on screen (e.g. unset asm.bytes).
+#e scr.responsive = false
+
+# Use RGB colors (not available on Windows).
+e scr.rgbcolor = true
+
+# Seek to the specified address on startup.
+#e scr.seek = 
+
+# Pipe output to file of this name.
+#e scr.tee = 
+
+# Manage color palette (0: ANSI 16, 1: 256, 2: 16M).
+#e scr.truecolor = false
+
+# Use tts if available by a command (see ic).
+#e scr.tts = false
+
+# Show UTF-8 characters instead of ANSI.
+e scr.utf8 = true
+
+# Mouse wheel in Visual; temporarily disable/re-enable by right click/Enter.
+#e scr.wheel = true
+
+# Use sn/sp and scr.nkey on wheel instead of scroll.
+#e scr.wheelnkey = false
+
+# Mouse wheel speed.
+#e scr.wheelspeed = 4
+
+# Show zoneflags in visual mode before the title (see fz?).
+#e scr.zoneflags = true
+
+
+###
+### Search
+###
+# Only catch aligned search hits.
+#e search.align = 0
+
+# Chunk size for /+ (default size is asm.bits/8).
+#e search.chunk = 0
+
+# Accept contiguous/adjacent search hits.
+#e search.contiguous = true
+
+# Start index number at search hits.
+#e search.count = 0
+
+# Search string distance.
+#e search.distance = 0
+
+# Stop search after N consecutive hits.
+#e search.esilcombo = 8
+
+# All search results are flagged, otherwise only printed.
+#e search.flags = true
+
+# Specify search boundaries (raw, block, file, section, range).
+#e search.in = file
+
+# Store last search index count.
+#e search.kwidx = 0
+
+# Maximum number of hits (0: no limit).
+#e search.maxhits = 0
+
+# Look for overlapped search hits.
+#e search.overlap = false
+
+# Prefix name in search hits label.
+#e search.prefix = hit
+
+# Show search results.
+#e search.show = true
+
+
+###
+### Stack
+###
+# Show annotated hexdump in visual debug.
+#e stack.anotated = false
+
+# Show bytes instead of words in stack.
+#e stack.bytes = true
+
+# Delta for the stack dump.
+#e stack.delta = 0
+
+# Size in bytes of stack hexdump in visual debug.
+#e stack.size = 64
+
+
+###
+### Time
+###
+# Date format (%Y-%m-%d %H:%M:%S %z).
+#e time.fmt = %Y-%m-%d %H:%M:%S %z
+
+# Time zone in hours relative to GMT: +2, -1, ...
+#e time.zone = 0
+
+
+###
+### Zignature
+###
+# Maximum zignature length to filter in "zg"
+#e zign.max = 500
+
+# Minimum zignature length to filter in "zg"
+#e zign.min = 2
+
+# Default prefix for signatures matches.
+#e zign.prefix = sign
+
+
+###
+### Zoom
+###
+# Zoom callback to calculate each byte (see pz?).
+#e zoom.byte = h
+
+# Zoom start address.
+#e zoom.from = 0
+
+# Zoom max size of block.
+#e zoom.maxsz = 512
+
+# Zoom end address.
+#e zoom.to = 7580
