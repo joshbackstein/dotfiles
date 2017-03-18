@@ -25,9 +25,6 @@ if [[ `uname` != "Darwin" ]]; then
     # Set display for terminal prompt.
     PS1='[\u@\h \W]\$ '
 
-    # Make xterm the default terminal for the i3 window manager.
-    export TERMINAL=xterm
-
     # Make vim the default editor.
     export VISUAL=vim
     export EDITOR=vim
