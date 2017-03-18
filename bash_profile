@@ -8,6 +8,9 @@ source ~/.alias;
 # Add GOPATH.
 export GOPATH=$HOME/go
 
+# Add GOBIN.
+export GOBIN=$GOPATH/bin
+
 # Add Go to PATH.
 export PATH="$GOPATH/bin:$PATH:/usr/local/go/bin"
 
