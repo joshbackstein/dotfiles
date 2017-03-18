@@ -22,6 +22,11 @@ vnoremap jk <esc>
 " enable syntax processing
 syntax enable
 
+" fix syntax highlighting when it gets messed up
+" Source: http://vi.stackexchange.com/questions/2172/why-i-am-losing-syntax-highlighting-when-folding-code-within-a-script-tag
+" Source: https://bitbucket.org/sjl/dotfiles/src/603bb1ae9da27c6e08ab115df1cb5d8f6a1442c3/vim/vimrc?at=default&fileviewer=file-view-default#cl-445
+nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
+
 " number of visual spaces per TAB
 set tabstop=2
 
