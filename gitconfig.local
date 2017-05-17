@@ -1,0 +1,7 @@
+#
+# gitconfig.local
+#
+
+[user]
+  name = <INSERT USERNAME>
+  email = <INSERT EMAIL>
