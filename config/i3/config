@@ -14,6 +14,9 @@ set $mod Mod4
 # Run GNOME Settings Daemon so we can use the nice features of GNOME.
 exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 
+# Should the focus follow the mouse?
+focus_follows_mouse no
+
 # Remap Caps Lock to Control.
 exec xmodmap -e "remove lock = Caps_Lock"
 exec xmodmap -e "keycode 66 = Control_L"
