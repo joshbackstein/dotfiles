@@ -5,6 +5,9 @@
 # Include aliases.
 source ~/.alias;
 
+# Add home directory bin.
+export PATH="$HOME/bin:$PATH"
+
 # Add GOPATH.
 export GOPATH=$HOME/go
 
