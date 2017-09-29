@@ -40,3 +40,8 @@ fi
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=$DEVKITPRO/devkitARM
 export PATH=$PATH:$DEVKITARM/bin
+
+# Add RISC-V tools to path.
+export TOP=$HOME/tools
+export RISCV=$TOP/riscv
+export PATH=$PATH:$RISCV/bin
