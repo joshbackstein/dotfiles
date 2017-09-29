@@ -48,3 +48,9 @@ export PATH=$PATH:$RISCV/bin
 
 # Add Rust to path.
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Use 32-bit Wine
+export WINEARCH="win32"
+export WINEPREFIX="${HOME}/.wine"
+# Disable winemenubuilder to keep Wine from creating new file associations
+export WINEDLLOVERRIDES="winemenubuilder.exe=d"
