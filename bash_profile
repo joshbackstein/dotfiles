@@ -45,3 +45,6 @@ export PATH=$PATH:$DEVKITARM/bin
 export TOP=$HOME/tools
 export RISCV=$TOP/riscv
 export PATH=$PATH:$RISCV/bin
+
+# Add Rust to path.
+export PATH="$HOME/.cargo/bin:$PATH"
