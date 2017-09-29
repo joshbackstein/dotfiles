@@ -53,3 +53,6 @@ alias toggleipv6=toggleIPv6Setting
 
 # More convenient piping into clipboard
 alias cb="xclip -selection clipboard"
+
+# Get directory size
+alias dirsize="du -hs"
