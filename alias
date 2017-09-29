@@ -33,3 +33,6 @@ alias gitlc=gitLineCountByAuthor
 
 # More convenient xdg-open alias.
 alias open=xdg-open
+
+# Convert Markdown to HTML.
+alias md2html="pandoc -s -f markdown -t html"
