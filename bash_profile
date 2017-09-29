@@ -37,6 +37,6 @@ if [[ `uname` != "Darwin" ]]; then
 fi
 
 # devkitPro config.
-export DEVKITPRO="$HOME/devkitPro"
-export DEVKITARM="$DEVKITPRO/devkitARM"
-export PATH="$PATH:$DEVKITARM/bin"
+export DEVKITPRO=/opt/devkitpro
+export DEVKITARM=$DEVKITPRO/devkitARM
+export PATH=$PATH:$DEVKITARM/bin
