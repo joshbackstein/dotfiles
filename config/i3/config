@@ -22,6 +22,10 @@ exec xmodmap -e "remove lock = Caps_Lock"
 exec xmodmap -e "keycode 66 = Control_L"
 exec xmodmap -e "add control = Control_L"
 
+# Enable multiple monitors
+set $MultipleMonitors xrandr --output DP1 --auto --right-of eDP1 && i3-msg workspace 2 && i3-msg move workspace to output DP1
+exec --no-startup-id $MultipleMonitors
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 8
@@ -183,16 +187,58 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Power functions.
+# System menu
 set $Locker i3lock -c 222222 && sleep 1
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $LogoutPrompt Are you sure you want to logout? (y/n)
+mode "$LogoutPrompt" {
+  bindsym y exec --no-startup-id i3-msg exit, mode "default"
+  bindsym n mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $SuspendPrompt Are you sure you want to suspend? (y/n)
+mode "$SuspendPrompt" {
+  bindsym y exec --no-startup-id $Locker && systemctl suspend, mode "default"
+  bindsym n mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $HibernatePrompt Are you sure you want to hibernate? (y/n)
+mode "$HibernatePrompt" {
+  bindsym y exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+  bindsym n mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $RebootPrompt Are you sure you want to reboot? (y/n)
+mode "$RebootPrompt" {
+  bindsym y exec --no-startup-id systemctl reboot, mode "default"
+  bindsym n mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $ShutdownPrompt Are you sure you want to shutdown? (y/n)
+mode "$ShutdownPrompt" {
+  bindsym y exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym n mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $mode_system System (a) restart PulseAudio, (d) refresh displays, (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
+  bindsym a exec --no-startup-id pulseaudio -k && pulseaudio --start, mode "default"
+  bindsym d exec --no-startup-id $MultipleMonitors, mode "default"
   bindsym l exec --no-startup-id $Locker, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-  bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-  bindsym r exec --no-startup-id systemctl reboot, mode "default"
-  bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+  #bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  #bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+  #bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+  #bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  #bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+  bindsym e mode "$LogoutPrompt"
+  bindsym s mode "$SuspendPrompt"
+  bindsym h mode "$HibernatePrompt"
+  bindsym r mode "$RebootPrompt"
+  bindsym Shift+s mode "$ShutdownPrompt"
 
   # Back to normal: Enter or Escape.
   bindsym Return mode "default"
