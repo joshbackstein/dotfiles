@@ -34,6 +34,11 @@ if [[ `uname` != "Darwin" ]]; then
 
     # Make ls and grep colorful.
     export CLICOLOR=1
+
+    # Use GNOME keyring.
+    if [ -n "$DESKTOP_SESSION" ] || [ "$DESKTOP_SESSION" = "i3" ] ; then
+      export $(gnome-keyring-daemon -s)
+    fi
 fi
 
 # devkitPro config.
