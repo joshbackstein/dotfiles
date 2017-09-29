@@ -50,3 +50,6 @@ toggleIPv6Setting() {
   fi
 }
 alias toggleipv6=toggleIPv6Setting
+
+# More convenient piping into clipboard
+alias cb="xclip -selection clipboard"
