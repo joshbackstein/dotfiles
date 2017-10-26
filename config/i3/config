@@ -22,9 +22,12 @@ exec xmodmap -e "remove lock = Caps_Lock"
 exec xmodmap -e "keycode 66 = Control_L"
 exec xmodmap -e "add control = Control_L"
 
+# Set background
+set $SetBackground feh --bg-scale ~/Downloads/Wallpapers/_background
+
 # Enable multiple monitors
 set $MultipleMonitors xrandr --output DP1 --auto --right-of eDP1 && i3-msg workspace 2 && i3-msg move workspace to output DP1
-exec --no-startup-id $MultipleMonitors
+exec --no-startup-id $MultipleMonitors && $SetBackground
 
 # Run Network Manager applet
 exec --no-startup-id nm-applet
@@ -230,7 +233,7 @@ mode "$ShutdownPrompt" {
 set $mode_system System (a) restart PulseAudio, (d) refresh displays, (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym a exec --no-startup-id pulseaudio -k && pulseaudio --start, mode "default"
-  bindsym d exec --no-startup-id $MultipleMonitors, mode "default"
+  bindsym d exec --no-startup-id $MultipleMonitors && $SetBackground, mode "default"
   bindsym l exec --no-startup-id $Locker, mode "default"
   #bindsym e exec --no-startup-id i3-msg exit, mode "default"
   #bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
