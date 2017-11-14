@@ -260,11 +260,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFA
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% && pactl -- set-sink-mute @DEFAULT_SINK@ 0 && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status
 # Alternate volume
-set $mode_volume Volume (j) Down, (k) Up, (m) Mute, (Enter/Escape) Exit
+set $mode_volume Volume (j) Down, (k) Up, (m) Mute, (p) pavucontrol, (Enter/Escape) Exit
 mode "$mode_volume" {
   bindsym k exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5% && pactl -- set-sink-mute @DEFAULT_SINK@ 0 && killall -SIGUSR1 i3status
   bindsym j exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5% && pactl -- set-sink-mute @DEFAULT_SINK@ 0 && killall -SIGUSR1 i3status
   bindsym m exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle && killall -SIGUSR1 i3status, mode "default"
+  bindsym p exec pavucontrol, mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
