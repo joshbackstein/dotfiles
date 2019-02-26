@@ -18,9 +18,7 @@ exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 focus_follows_mouse no
 
 # Remap Caps Lock to Control.
-exec xmodmap -e "remove lock = Caps_Lock"
-exec xmodmap -e "keycode 66 = Control_L"
-exec xmodmap -e "add control = Control_L"
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 
 # Set background
 set $SetBackground feh --bg-scale ~/Downloads/Wallpapers/_background
