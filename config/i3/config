@@ -18,7 +18,8 @@ exec /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 focus_follows_mouse no
 
 # Remap Caps Lock to Control.
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+set $RemapKeyboard setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id $RemapKeyboard
 
 # Set background
 set $SetBackground feh --bg-scale ~/Downloads/Wallpapers/_background
@@ -231,9 +232,10 @@ mode "$ShutdownPrompt" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-set $mode_system System (a) restart PulseAudio, (d) refresh displays, (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (a) restart PulseAudio, (k) remap keyboard, (d) refresh displays, (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym a exec --no-startup-id pulseaudio -k && pulseaudio --start, mode "default"
+  bindsym k exec --no-startup-id $RemapKeyboard, mode "default"
   bindsym d exec --no-startup-id $MultipleMonitors && $SetBackground, mode "default"
   bindsym l exec --no-startup-id $Locker, mode "default"
   #bindsym e exec --no-startup-id i3-msg exit, mode "default"
