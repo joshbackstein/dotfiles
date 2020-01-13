@@ -10,8 +10,10 @@ source ~/.alias.local;
 if [[ `uname` != "Darwin" ]]; then
     alias ls="ls --color=auto"
 fi
+alias l1="ls -1"
 alias ll="ls -l"
 alias lsh="ls -a"
+alias l1h="ls -a1"
 alias llh="ls -al"
 
 # Make grep colorful.

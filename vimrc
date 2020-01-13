@@ -19,6 +19,7 @@ vnoremap jk <esc>
 """
 """ SPACES AND TABS
 """
+
 " enable syntax processing
 syntax enable
 
@@ -48,6 +49,11 @@ set autoindent
 """
 """ UI CONFIG
 """
+
+" consistent colors for terminal emulators with and without the bce terminfo capability
+" Source: https://unix.stackexchange.com/questions/348771/why-do-vim-colors-look-different-inside-and-outside-of-tmux
+set background=light
+
 " display file name in vim title
 set title
 
@@ -227,14 +233,14 @@ endfunc
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
 " insert mode.
-autocmd CursorMovedI * if pumvisible() == 0 && bufname("%") != "[Command Line]"|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0 && bufname("%") != "[Command Line]"|pclose|endif
+"autocmd CursorMovedI * if pumvisible() == 0 && bufname("%") != "[Command Line]"|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0 && bufname("%") != "[Command Line]"|pclose|endif
 
 " Remap autocomplete keys from <C-x><C-o> to <C-k>
 "inoremap <C-k> <C-x><C-o>
 
 " Remap autocomplete keys from <C-x><C-o> to <leader>, (,,)
-inoremap <leader>, <C-x><C-o>
+"inoremap <leader>, <C-x><C-o>
 "inoremap <C-j> <C-n>
 "inoremap <C-k> <C-p>
 
@@ -242,7 +248,7 @@ inoremap <leader>, <C-x><C-o>
 """
 """ PATHOGEN PLUGIN
 """
-execute pathogen#infect()
+"execute pathogen#infect()
 
 
 """
@@ -250,16 +256,16 @@ execute pathogen#infect()
 """
 
 " enable filetype plugin
-filetype plugin on
-let g:go_disable_autoinstall = 0
+"filetype plugin on
+"let g:go_disable_autoinstall = 0
 
 " highlighting for Go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highligh_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+"let g:go_highlight_functions = 1
+"let g:go_highlight_methods = 1
+"let g:go_highlight_structs = 1
+"let g:go_highligh_interfaces = 1
+"let g:go_highlight_operators = 1
+"let g:go_highlight_build_constraints = 1
 
 
 """
@@ -267,4 +273,4 @@ let g:go_highlight_build_constraints = 1
 """
 
 " ARMv6 and ARMv7 assembly syntax highlighting.
-au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+"au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7

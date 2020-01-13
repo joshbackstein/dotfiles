@@ -5,6 +5,7 @@
 # Use Vim for the editor.
 [core]
   editor = vim
+  hooksPath = githooks
 
 # Push only the current branch to the one "git pull" would pull from and check if the names match.
 [push]
@@ -13,10 +14,10 @@
 # Enforce SSH.
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
-[url "ssh://git@gitlab.com/"]
-  insteadOf = https://gitlab.com/
-[url "ssh://git@bitbucket.org/"]
-  insteadOf = https://bitbucket.org/
+#[url "ssh://git@gitlab.com/"]
+  #insteadOf = https://gitlab.com/
+#[url "ssh://git@bitbucket.org/"]
+  #insteadOf = https://bitbucket.org/
 
 # Include a local gitconfig file for holding user information, etc.
 [include]
