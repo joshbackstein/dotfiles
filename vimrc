@@ -15,6 +15,19 @@ inoremap jk <esc>
 " set jk to escape in visual mode
 vnoremap jk <esc>
 
+" allow backspace
+set backspace=indent,eol,start
+
+" don't automatically insert comment leader on new line
+" more options can be found with :help fo-table
+" source: https://stackoverflow.com/questions/16030639/vim-formatoptions-or/23326474#23326474
+augroup Format-Options
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r formatoptions-=o
+  " r - current comment leader after hitting <Enter> in Insert mode
+  " o - current comment leader after hitting 'o' or 'O' in Normal mode
+augroup END
+
 
 """
 """ SPACES AND TABS
